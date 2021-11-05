@@ -162,7 +162,9 @@ public:
             return grid[0][2];
         }
         else {
-            return "gameover";
+            // gameOver = false;
+            // cout << "in gameResult" << endl;
+            return "gameover";          
         }
     }
 
@@ -183,7 +185,9 @@ public:
             }
         }
         else {
+            // cout << "in declareResult" << endl;
             if (gameOver) {
+                // cout << "Inside if loop" << endl;
                 status.getData();
                 cout << "\tGame Tie...!" << endl;
             }
@@ -194,6 +198,7 @@ public:
 
 
 int main() {
+    
     while (true) {
         if (trial == 0) {
             cout << "Do you want to play again ? (yes:1 , no:2) : ";
