@@ -4,11 +4,11 @@ using namespace std;
 // tasks to implement in this game
 
 // [x] make 3 Dimensional array (grid)
-// [x] show all data to user for play game
+// [x] show all data to user to play the game
 // [ ] take user choice and handle it using switch-case
-// [ ] create 2 user to play game
-// [ ] create functions for when user mark X and after that turn for 2nd user to mark 0
-// [ ] check all status while any user mark (if X completed in row OR 0 completed)
+// [ ] create 2 users to play game
+// [ ] create functions for when user marks X and after that turn for 2nd user to mark 0
+// [ ] check all status while any user mark to conclude the game
 
 // [!] handle update status using clear screen and print again result
 
@@ -26,6 +26,7 @@ int placeOnMark;
 
 int trial = 1;
 
+// class defining the grid of the game after each user sets it's position
 class status {
 public:
 
@@ -54,9 +55,9 @@ public:
         }
         cout << endl;
     }
-
 }status;
 
+// class to take the position of user to mark in the grid
 class gameLogic {
 public:
 
@@ -105,7 +106,6 @@ public:
         case 9:
             grid[2][2] = checkUser();
             break;
-
         default:
             cout << "Invalid location...!" << endl;
             break;
@@ -122,6 +122,7 @@ public:
         }
     }
 
+    // to check conditions to conclude the game
     string gameResult() {
 
         // scanning the 1st row
@@ -139,8 +140,6 @@ public:
             gameOver = true;
             return grid[2][0];
         }
-
-
         // scanning the 1st column
         else if (grid[0][0] == grid[1][0] && grid[1][0] == grid[2][0]) {
             gameOver = true;
@@ -156,7 +155,6 @@ public:
             gameOver = true;
             return grid[0][2];
         }
-
         // scanning the diagonals
         else if (grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]) {
             gameOver = true;
@@ -171,6 +169,7 @@ public:
         }
     }
 
+    // to declare result according to conditions checked previously
     void declareResult() {
         cout << endl;
 
@@ -195,13 +194,10 @@ public:
         trial = 0;
         cout << endl;
     }
-
 }game;
 
 
 int main() {
-
-
     while (true) {
         if (trial == 0) {
             cout << "Do you want to play again ? (yes:1 , no:2) : ";
@@ -213,6 +209,7 @@ int main() {
     return 0;
 }
 
+// function to check if user wants to play again
 void again(void)
 {
     switch (playAgain) {
@@ -232,6 +229,5 @@ void again(void)
                 cout << "Invalid choice!" << endl;
                 exit(0);
                 break;
-            }
-            
+            }          
 }
