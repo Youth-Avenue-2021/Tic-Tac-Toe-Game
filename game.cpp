@@ -166,6 +166,7 @@ public:
             // cout << "in gameResult" << endl;
             return "gameover";          
         }
+       
     }
 
     // to declare result according to conditions checked previously
@@ -206,13 +207,15 @@ int main() {
             // trial = 1;
         }
         else {
-            playAgain = 1;
+            playAgain = 1;            
         }
         switch (playAgain) {
         case 1:
             while (!gameOver) {
-                if (trial > 9)
-                    break;
+                if (trial > 9){
+                    // cout << "Game draw" << endl;
+                    break;   
+                }
                 game.inputData();
                 trial++;
                 cout << "Trial : " << trial << endl;
@@ -228,6 +231,7 @@ int main() {
             exit(0);
             break;
         }
+        
     }
     return 0;
 }
