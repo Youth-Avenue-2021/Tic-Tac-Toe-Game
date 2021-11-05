@@ -12,6 +12,8 @@ using namespace std;
 
 // [!] handle update status using clear screen and print again result
 
+// function prototype
+void again(void);
 
 string grid[3][3] = { {"1","2","3"},{"4","5","6"},{"7","8","9"} };
 
@@ -105,7 +107,7 @@ public:
             break;
 
         default:
-            cout << "Invalid location choice...!" << endl;
+            cout << "Invalid location...!" << endl;
             break;
         }
 
@@ -122,40 +124,40 @@ public:
 
     string gameResult() {
 
-        // scanning in 1st row
+        // scanning the 1st row
         if (grid[0][0] == grid[0][1] && grid[0][1] == grid[0][2]) {
             gameOver = true;
             return grid[0][0];
         }
-        // scanning in 2nd row
+        // scanning the 2nd row
         else if (grid[1][0] == grid[1][1] && grid[1][1] == grid[1][2]) {
             gameOver = true;
             return grid[1][0];
         }
-        // scanning in 3rd row
+        // scanning the 3rd row
         else if (grid[2][0] == grid[2][1] && grid[2][1] == grid[2][2]) {
             gameOver = true;
             return grid[2][0];
         }
 
 
-        // scanning in 1st column
+        // scanning the 1st column
         else if (grid[0][0] == grid[1][0] && grid[1][0] == grid[2][0]) {
             gameOver = true;
             return grid[0][0];
         }
-        // scanning in 2nd column
+        // scanning the 2nd column
         else if (grid[0][1] == grid[1][1] && grid[1][1] == grid[2][1]) {
             gameOver = true;
             return grid[0][1];
         }
-        // scanning in 3rd column
+        // scanning the 3rd column
         else if (grid[0][2] == grid[1][2] && grid[1][2] == grid[2][2]) {
             gameOver = true;
             return grid[0][2];
         }
 
-        // scanning in cross lines
+        // scanning the diagonals
         else if (grid[0][0] == grid[1][1] && grid[1][1] == grid[2][2]) {
             gameOver = true;
             return grid[0][0];
@@ -175,13 +177,13 @@ public:
         if (gameResult() == "X") {
             if (gameOver) {
                 status.getData();
-                cout << "\tPlayer1 Won...!" << endl;
+                cout << "\tPlayer 1 Won...!" << endl;
             }
         }
         else if (gameResult() == "0") {
             if (gameOver) {
                 status.getData();
-                cout << "\tPlayer2 Won...!" << endl;
+                cout << "\tPlayer 2 Won...!" << endl;
             }
         }
         else {
@@ -204,11 +206,16 @@ int main() {
         if (trial == 0) {
             cout << "Do you want to play again ? (yes:1 , no:2) : ";
             cin >> playAgain;
-        }
-        else {
-            playAgain = 1;
+            // exit(0);
+            again();
+            }
+    }
+    return 0;
+}
 
-            switch (playAgain) {
+void again(void)
+{
+    switch (playAgain) {
             case 1:
                 while (!gameOver) {
                     if (trial >= 9)
@@ -217,14 +224,14 @@ int main() {
                 }
                 break;
             case 2:
+                cout << "Hope you enjoyed playing." << endl;
                 exit(0);
                 break;
 
             default:
+                cout << "Invalid choice!" << endl;
+                exit(0);
                 break;
             }
-        }
-    }
-
-    return 0;
+            
 }
