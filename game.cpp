@@ -12,9 +12,6 @@ using namespace std;
 
 // [!] handle update status using clear screen and print again result
 
-// function prototype
-void again(void);
-
 string grid[3][3] = { {"1","2","3"},{"4","5","6"},{"7","8","9"} };
 
 int playAgain;
@@ -32,7 +29,7 @@ public:
 
     void getData() {
 
-        system("cls");
+        // system("cls");
 
         cout << "--------- Tic-Tac-Toe Game ---------" << endl << endl;
         cout << "player[1] : X , player[2] : 0" << endl << endl;
@@ -72,7 +69,7 @@ public:
             switchUser = true;
         }
         cin >> placeOnMark;
-        trial++;
+        // trial++;
         updateGrid();
         declareResult();
     }
@@ -191,7 +188,6 @@ public:
                 cout << "\tGame Tie...!" << endl;
             }
         }
-        trial = 0;
         cout << endl;
     }
 }game;
@@ -202,32 +198,31 @@ int main() {
         if (trial == 0) {
             cout << "Do you want to play again ? (yes:1 , no:2) : ";
             cin >> playAgain;
-            // exit(0);
-            again();
+            // trial = 1;
+        }
+        else {
+            playAgain = 1;
+        }
+        switch (playAgain) {
+        case 1:
+            while (!gameOver) {
+                if (trial > 9)
+                    break;
+                game.inputData();
+                trial++;
+                cout << "Trial : " << trial << endl;
             }
+            break;
+        case 2:
+            cout << "Hope you enjoyed playing." << endl;
+            exit(0);
+            break;
+
+        default:
+            cout << "Invalid choice!" << endl;
+            exit(0);
+            break;
+        }
     }
     return 0;
-}
-
-// function to check if user wants to play again
-void again(void)
-{
-    switch (playAgain) {
-            case 1:
-                while (!gameOver) {
-                    if (trial >= 9)
-                        break;
-                    game.inputData();
-                }
-                break;
-            case 2:
-                cout << "Hope you enjoyed playing." << endl;
-                exit(0);
-                break;
-
-            default:
-                cout << "Invalid choice!" << endl;
-                exit(0);
-                break;
-            }          
 }
