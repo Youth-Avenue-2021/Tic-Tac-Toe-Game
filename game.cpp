@@ -14,7 +14,9 @@ using namespace std;
 
 string grid[3][3] = { {"1","2","3"},{"4","5","6"},{"7","8","9"} };
 
-int playAgain;
+
+
+int playAgain, choice;
 
 bool switchUser = true;
 bool gameOver = false;
@@ -193,50 +195,101 @@ public:
                 cout << "\tGame Tie...!" << endl;
             }
         }
-        trial = 0;
+        // trial = 0;
         cout << endl;
     }
 }game;
 
+// int main()
+// {
+//     cout << "WELCOME TO GAME... " << endl;
+    // cout << "1. New game" << endl
+    //      << "2. Rematch" << endl
+    //      << "3. Exit" << endl;
+    // cout << "Enter your choice: " ;
+    // cin >> playAgain;
+    // cout << endl;
 
-int main() {
+    // switch (playAgain)
+    // {
+    //     case 1:
+            // while(true)
+            // {
+            //     game.inputData();
+                // if(trial == 0)
+                // {
+                //     cout << "Game over!" << endl;
+                //     cout << "Do you want to play again? (yes:1, no:2): ";
+                //     cin >> choice;
+                //     cout << endl;
+                    // switch (choice)
+                    // {
+                    //     case 1:
+                    //         game.inputData();
+                    //     break;
+                    //     case 2:
+                    //         cout << "Hope you enjoued playing. " << endl;
+                    //         break;
+                    //     default:
+                    //         cout << "Invalid option.!" << endl;
+                    //         break;
+                    // }
+                // }
+            // }
+            
+    //         break;
+       
+
+    // }
+    // return 0;
+// }
+
+// int main() {
     
-    while (true) {
-        if (trial == 0) {
-            cout << "Do you want to play again ? (yes:1 , no:2) : ";
-            cin >> playAgain;
-            // trial = 1;
-        }
-        else {
-            playAgain = 1;            
-        }
-        switch (playAgain) {
-        case 1:
-            while (!gameOver) {
-                if (trial > 9){
-                    // cout << "Game draw" << endl;
-                    break;   
-                }
-                else
-                {
-                    game.inputData();
-                    // trial++;
-                    cout << "Trial : " << trial << endl;
-                }
-                
-            }
-            break;
-        case 2:
-            cout << "Hope you enjoyed playing." << endl;
-            exit(0);
-            break;
+//     while (true) {
+//         if (trial == 0) {
+//             cout << "============================================ " << endl;
+//             cout << "Do you want to play again ? (yes:1 , no:2) : ";
+//             cin >> playAgain;
+            
+            
+//             cout << "Trial : " << trial << endl;
+//             // trial = 1;         
+//         }
+//         else {
+//             playAgain = 1;     
+//             cout << "Welcome.. " << endl;       
+//         }
+//         switch (playAgain) {
+//         case 1:
+            
+//             while (!gameOver) {
+//                 if (trial > 9){
+//                     // cout << "Game draw" << endl;
+//                     break;   
+//                 }
+//                 else
+//                 {
+//                     game.inputData();
+//                     // trial++;
+//                     // cout << "Trial : " << trial << endl;
+                    
+//                 }
+//             }
+//             break;
+//         case 2:
+//             cout << "Hope you enjoyed playing." << endl;
+//             exit(0);
+//             break;
 
-        default:
-            cout << "Invalid choice!" << endl;
-            exit(0);
-            break;
-        }
-        
-    }
-    return 0;
-}
+//         default:
+//             cout << "Invalid choice!" << endl;
+//             exit(0);
+//             break;
+//         }
+          
+//     }
+//     return 0;
+// }
+
+
