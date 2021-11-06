@@ -164,7 +164,7 @@ public:
         else {
             // gameOver = false;
             // cout << "in gameResult" << endl;
-            return "gameover";          
+            return "gameover";
         }
         // trial = 0;
     }
@@ -200,7 +200,7 @@ public:
 
 
 int main() {
-    
+
     while (true) {
         if (trial == 0) {
             cout << "Do you want to play again ? (yes:1 , no:2) : ";
@@ -208,22 +208,21 @@ int main() {
             // trial = 1;
         }
         else {
-            playAgain = 1;            
+            playAgain = 1;
         }
         switch (playAgain) {
         case 1:
             while (!gameOver) {
-                if (trial > 9){
+                if (trial > 9) {
                     // cout << "Game draw" << endl;
-                    break;   
+                    break;
                 }
-                else
-                {
+                else {
                     game.inputData();
                     // trial++;
                     cout << "Trial : " << trial << endl;
                 }
-                
+
             }
             break;
         case 2:
@@ -236,7 +235,7 @@ int main() {
             exit(0);
             break;
         }
-        
+
     }
     return 0;
 }
