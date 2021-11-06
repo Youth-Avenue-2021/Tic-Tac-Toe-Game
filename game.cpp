@@ -166,7 +166,7 @@ public:
             // cout << "in gameResult" << endl;
             return "gameover";          
         }
-       
+        // trial = 0;
     }
 
     // to declare result according to conditions checked previously
@@ -193,6 +193,7 @@ public:
                 cout << "\tGame Tie...!" << endl;
             }
         }
+        trial = 0;
         cout << endl;
     }
 }game;
@@ -216,9 +217,13 @@ int main() {
                     // cout << "Game draw" << endl;
                     break;   
                 }
-                game.inputData();
-                trial++;
-                cout << "Trial : " << trial << endl;
+                else
+                {
+                    game.inputData();
+                    // trial++;
+                    cout << "Trial : " << trial << endl;
+                }
+                
             }
             break;
         case 2:
